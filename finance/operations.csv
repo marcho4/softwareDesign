@@ -1,0 +1,3 @@
+"ID","Transaction type","Description","Amount","Category ID","Date","Bank Account ID"
+"a323c235-0001-4a95-91c0-ba84ada41a26","SPENDING","Coffee","RUB 100.0","55c70496-c5d6-4d6a-9dd2-8cc0b2fcb3d0","2025-03-19T21:19:50.558251","6088211a-800c-4ba2-9a4e-bbbe84c9e483"
+"d76c46bb-ba28-4806-aff4-1fc159a4d128","SPENDING","капучинка","RUB 500.0","55c70496-c5d6-4d6a-9dd2-8cc0b2fcb3d0","2025-03-19T21:19:50.558274","6088211a-800c-4ba2-9a4e-bbbe84c9e483"

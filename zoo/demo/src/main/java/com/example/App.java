@@ -34,6 +34,7 @@ public class App {
             int choice = readInt(scanner);
 
             if (choice == 6) {
+                scanner.close();
                 break;
             }
 
@@ -137,6 +138,5 @@ public class App {
             }
         }
 
-        scanner.close();
     }
 }

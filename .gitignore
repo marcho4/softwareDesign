@@ -1,3 +1,7 @@
 /.qodo
 zoo/hw_1.zip
 zoo/.vscode
+.DS_Store
+.idea
+.vscode
+.qodo

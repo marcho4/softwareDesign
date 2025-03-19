@@ -1,0 +1,23 @@
+[ {
+  "id" : "8d1d5bf2-f800-4fa1-ac1f-d443792ff561",
+  "transactionType" : "SPENDING",
+  "bankAccountId" : "f75562d1-a28a-41b4-a245-568940437f68",
+  "amount" : {
+    "currency" : "RUB",
+    "amount" : 100.0
+  },
+  "date" : "2025-03-19T21:19:50.552539",
+  "description" : "Coffee",
+  "categoryId" : "5daba2cc-2f0f-45d8-a7ee-279afa8f7775"
+}, {
+  "id" : "e1027f21-9826-42c7-9fea-3487a02db37d",
+  "transactionType" : "SPENDING",
+  "bankAccountId" : "f75562d1-a28a-41b4-a245-568940437f68",
+  "amount" : {
+    "currency" : "RUB",
+    "amount" : 500.0
+  },
+  "date" : "2025-03-19T21:19:50.552575",
+  "description" : "капучинка",
+  "categoryId" : "5daba2cc-2f0f-45d8-a7ee-279afa8f7775"
+} ]
