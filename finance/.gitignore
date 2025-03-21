@@ -1,1 +1,7 @@
 .qodo
+.vscode
+.idea
+.DS_Store
+.mvn
+.m2
+/target

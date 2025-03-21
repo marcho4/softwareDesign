@@ -49,3 +49,14 @@ StatsBuilder - фильтрует операции по заданному по�
 * CRUD Categories ✅
 * CRUD Operations ✅
 * ReadMe ✅
+
+## Инструкция по запуску
+``` sudo apt install maven``` (Linux) или ```brew install maven``` (Mac OS)
+
+
+```mvn clean install``` в директории проекта
+
+
+```mvn spring-boot:run``` для запуска приложения
+
+```mvn test``` для запуска тестов
