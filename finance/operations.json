@@ -1,23 +1,23 @@
 [ {
-  "id" : "8d1d5bf2-f800-4fa1-ac1f-d443792ff561",
+  "id" : "4c50aefb-908a-42a4-b4bd-e75b6a37ffbe",
   "transactionType" : "SPENDING",
-  "bankAccountId" : "f75562d1-a28a-41b4-a245-568940437f68",
+  "bankAccountId" : "01a79b25-e03a-4884-8df5-7f952719cff4",
   "amount" : {
     "currency" : "RUB",
     "amount" : 100.0
   },
-  "date" : "2025-03-19T21:19:50.552539",
+  "date" : "2025-03-21T10:07:54.760667",
   "description" : "Coffee",
-  "categoryId" : "5daba2cc-2f0f-45d8-a7ee-279afa8f7775"
+  "categoryId" : "92b68ac6-ebf4-4bc8-bd55-3bbd71bb0649"
 }, {
-  "id" : "e1027f21-9826-42c7-9fea-3487a02db37d",
+  "id" : "1f5551c6-f46a-4c3f-93e9-d715b3e3bd84",
   "transactionType" : "SPENDING",
-  "bankAccountId" : "f75562d1-a28a-41b4-a245-568940437f68",
+  "bankAccountId" : "01a79b25-e03a-4884-8df5-7f952719cff4",
   "amount" : {
     "currency" : "RUB",
     "amount" : 500.0
   },
-  "date" : "2025-03-19T21:19:50.552575",
+  "date" : "2025-03-21T10:07:54.760695",
   "description" : "капучинка",
-  "categoryId" : "5daba2cc-2f0f-45d8-a7ee-279afa8f7775"
+  "categoryId" : "92b68ac6-ebf4-4bc8-bd55-3bbd71bb0649"
 } ]

@@ -2,19 +2,19 @@
   amount:
     amount: 100.0
     currency: RUB
-  bankAccountId: f5221e55-a32a-4869-b8c1-dc10631461ad
-  categoryId: c97ab5f3-3a6d-489c-91de-a3fb0b37d717
-  date: !LocalDateTime '2025-03-19T21:19:50.530571'
+  bankAccountId: a573c4c5-c3a8-4378-bda2-2909eebb775c
+  categoryId: e94b6912-0519-4bd9-97f8-88d7c5d90140
+  date: !LocalDateTime '2025-03-21T10:07:54.740666'
   description: Coffee
-  id: 50c5cf82-75a0-438d-9984-58b61179c8fe
+  id: 9ee2e142-3932-4273-8027-bec36fbd2b63
   transactionType: SPENDING
 - !!com.finance.values.Operation
   amount:
     amount: 500.0
     currency: RUB
-  bankAccountId: f5221e55-a32a-4869-b8c1-dc10631461ad
-  categoryId: c97ab5f3-3a6d-489c-91de-a3fb0b37d717
-  date: !LocalDateTime '2025-03-19T21:19:50.530596'
+  bankAccountId: a573c4c5-c3a8-4378-bda2-2909eebb775c
+  categoryId: e94b6912-0519-4bd9-97f8-88d7c5d90140
+  date: !LocalDateTime '2025-03-21T10:07:54.740704'
   description: капучинка
-  id: 7c3f7b29-4316-42a4-a819-815c1257661c
+  id: 7c890af0-f2a1-447a-9d94-a8bd8f71f449
   transactionType: SPENDING
