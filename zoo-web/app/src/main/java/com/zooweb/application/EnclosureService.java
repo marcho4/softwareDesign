@@ -18,8 +18,8 @@ import com.zooweb.domain.value_objects.Species;
 @Service
 public class EnclosureService implements IEnclosureService {
     
-    private IEnclosureRepository enclosureRepo;
-    private IAnimalRepository animalRepo;
+    private final IEnclosureRepository enclosureRepo;
+    private final IAnimalRepository animalRepo;
 
     @Autowired
     public EnclosureService(IEnclosureRepository enclosureRepo, IAnimalRepository animalRepo) {
@@ -55,7 +55,8 @@ public class EnclosureService implements IEnclosureService {
 
     @Override
     public void addAnimalToEnclosure(UUID id, UUID animalId) {
-        IEnclosure enclosure = enclosureRepo.getEnclosure(id);
+        IEnclosure enclosure = this.getEnclosure(id);
+
         if (enclosure == null) {
             throw new RuntimeException("Enclosure not found");
         }
@@ -68,6 +69,10 @@ public class EnclosureService implements IEnclosureService {
 
         if (animal.getSpecies() != enclosure.getSpecies()) {
             throw new RuntimeException("Animal species does not match enclosure species");
+        }
+
+        if (enclosure.getSpecies() != animal.getSpecies()) {
+            throw new RuntimeException("Виды животного и клетки должны совпадать");
         }
 
         if (animal.getEnclosure() != null) {

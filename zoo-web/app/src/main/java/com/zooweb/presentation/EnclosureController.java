@@ -2,7 +2,6 @@ package com.zooweb.presentation;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -43,16 +42,7 @@ public class EnclosureController {
     @GetMapping("/{id}")
     public ResponseEntity<EnclosureDTO> getEnclosure(@PathVariable UUID id) {
         IEnclosure enclosure = enclosureService.getEnclosure(id);
-        EnclosureDTO dto = new EnclosureDTO();
-        dto.setId(enclosure.getId());
-        dto.setSpecies(enclosure.getSpecies());
-        dto.setCapacity(enclosure.getCapacity());
-        dto.setVacant(enclosure.getVacant());
-        dto.setClean(enclosure.isClean());
-        dto.setSize(enclosure.getSize());
-        dto.setAnimalIds(enclosure.getAnimals().stream()
-            .map(IAnimal::getId)
-            .collect(Collectors.toList()));
+        EnclosureDTO dto = new EnclosureDTO(enclosure);
         return ResponseEntity.ok(dto);
     }
 

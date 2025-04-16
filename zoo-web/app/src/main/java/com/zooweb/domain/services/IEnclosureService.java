@@ -7,9 +7,8 @@ import com.zooweb.domain.IEnclosure;
 import com.zooweb.domain.IAnimal;
 import com.zooweb.domain.value_objects.Species;
 
-import org.springframework.stereotype.Service;
 
-@Service
+
 public interface IEnclosureService {
     public IEnclosure createEnclosure(Species species, int capacity, int width, int height, int length);
     public IEnclosure getEnclosure(UUID id);

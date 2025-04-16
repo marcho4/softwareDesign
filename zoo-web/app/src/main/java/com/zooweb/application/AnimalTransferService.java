@@ -41,6 +41,10 @@ public class AnimalTransferService implements IAnimalTransferService {
             throw new RuntimeException("Вольер с id " + enclosureId + " не найден");
         }
 
+        if (enclosure.getSpecies() != animal.getSpecies()) {
+            throw new RuntimeException("Виды животного и клетки должны совпадать");
+        }
+
         if (enclosure.getVacant() == 0) {
             throw new RuntimeException("Вольер с id " + enclosureId + " заполнен");
         }

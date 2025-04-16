@@ -7,9 +7,7 @@ import com.zooweb.domain.value_objects.FeedingTime;
 import java.util.List;
 import java.util.UUID;
 
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface IFeedingScheduleRepository {
     public IFeedingSchedule addFeedingSchedule(UUID animalId, Food food, FeedingTime feedingTime);
     public void removeFeedingSchedule(IFeedingSchedule schedule);

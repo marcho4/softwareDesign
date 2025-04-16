@@ -20,8 +20,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Service
 public class FeedingOrganizationService implements IFeedingOrganizationService{
 
-    private IFeedingScheduleRepository feedingScheduleRepository;
-    private IAnimalRepository animalRepository;
+    private final IFeedingScheduleRepository feedingScheduleRepository;
+    private final IAnimalRepository animalRepository;
 
     @Autowired
     public FeedingOrganizationService(IFeedingScheduleRepository feedingScheduleRepository, IAnimalRepository animalRepository) {

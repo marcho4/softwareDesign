@@ -66,15 +66,7 @@ public class AnimalController {
     @GetMapping("/{id}")
     public ResponseEntity<AnimalDTO> getAnimal(@PathVariable @Validated UUID id) {
         IAnimal animal = animalService.getAnimal(id);
-        AnimalDTO dto = new AnimalDTO();
-        dto.setId(animal.getId());
-        dto.setSpecies(animal.getSpecies());
-        dto.setName(animal.getName());
-        dto.setBirthDate(animal.getBirthDate());
-        dto.setGender(animal.getGender());
-        dto.setFavoriteFood(animal.getFavoriteFood());
-        dto.setHealthStatus(animal.getHealthStatus());
-        dto.setEnclosureId(animal.getEnclosure() != null ? animal.getEnclosure().getId() : null);
+        AnimalDTO dto = new AnimalDTO(animal);
         return ResponseEntity.ok(dto);
     }
 

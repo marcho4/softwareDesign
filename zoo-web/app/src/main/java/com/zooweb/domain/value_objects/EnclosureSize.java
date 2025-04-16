@@ -1,8 +1,10 @@
 package com.zooweb.domain.value_objects;
 
 
-public class EnclosureSize {
+import lombok.Getter;
 
+@Getter
+public class EnclosureSize {
     private int width;
     private int height;
     private int length;
@@ -20,18 +22,6 @@ public class EnclosureSize {
         this.width = width;
         this.height = height;
         this.length = length;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public int getLength() {
-        return length;
     }
 
     @Override

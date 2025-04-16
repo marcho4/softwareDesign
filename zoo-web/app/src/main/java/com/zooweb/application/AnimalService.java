@@ -74,6 +74,24 @@ public class AnimalService implements IAnimalService {
 
     @Override
     public IAnimal createAnimal(Species species, String name, LocalDate birthDate, Gender gender, Food favoriteFood, HealthStatus healthStatus) {
+        if (name == null || name.isEmpty()) {
+            throw new RuntimeException("Имя животного не может быть пустым");
+        }
+        if (species == null) {
+            throw new RuntimeException("Вид животного не может быть пустым");
+        }
+        if (birthDate == null) {
+            throw new RuntimeException("Дата рождения животного не может быть пустой");
+        }
+        if (gender == null) {
+            throw new RuntimeException("Пол животного не может быть пустым");
+        }
+        if (favoriteFood == null) {
+            throw new RuntimeException("Любимое питание животного не может быть пустым");
+        }
+        if (healthStatus == null) {
+            throw new RuntimeException("Здоровье животного не может быть пустым");
+        }
         Animal animal = new Animal(species, name, birthDate, gender, favoriteFood, healthStatus);
         animalRepository.addAnimal(animal);
         return animal;

@@ -7,14 +7,14 @@ import com.zooweb.domain.value_objects.EnclosureSize;
 import com.zooweb.domain.value_objects.Species;
 
 public interface IEnclosure {
-    public void addAnimal(IAnimal animal);
-    public void removeAnimal(IAnimal animal);
-    public void clean();
-    public List<IAnimal> getAnimals();
-    public int getCapacity();
-    public UUID getId();
-    public boolean isClean();
-    public EnclosureSize getSize();
-    public int getVacant();
-    public Species getSpecies();
+    void addAnimal(IAnimal animal);
+    void removeAnimal(IAnimal animal);
+    void clean();
+    List<IAnimal> getAnimals();
+    int getCapacity();
+    UUID getId();
+    boolean isClean();
+    EnclosureSize getSize();
+    int getVacant();
+    Species getSpecies();
 }

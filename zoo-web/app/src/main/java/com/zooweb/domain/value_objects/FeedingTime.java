@@ -1,9 +1,12 @@
 package com.zooweb.domain.value_objects;
 
+import lombok.Getter;
+
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
+@Getter
 public class FeedingTime {
     private DayOfWeek weekday;
     private LocalTime time;
@@ -26,11 +29,4 @@ public class FeedingTime {
         return "Кормить каждый " + this.weekday + " в " + this.time.format(DateTimeFormatter.ofPattern("HH:mm"));
     }
 
-    public DayOfWeek getWeekday() {
-        return this.weekday;
-    }
-
-    public LocalTime getTime() {
-        return this.time;
-    }
-}   
+}

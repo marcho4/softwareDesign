@@ -12,7 +12,7 @@ import com.zooweb.domain.repositories.IEnclosureRepository;
 
 @Repository
 public class EnclosureRepository implements IEnclosureRepository {
-    private HashMap<UUID, IEnclosure> enclosures;
+    private final HashMap<UUID, IEnclosure> enclosures;
 
     public EnclosureRepository() {
         this.enclosures = new HashMap<>();

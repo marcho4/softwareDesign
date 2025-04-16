@@ -1,16 +1,16 @@
 package com.zooweb.domain.services;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-import com.zooweb.domain.entities.Enclosure;
-import com.zooweb.domain.value_objects.*;
+import com.zooweb.domain.IAnimal;
+import com.zooweb.domain.IEnclosure;
+import com.zooweb.domain.IFeedingSchedule;
 
-@Service
 public interface IZooStatisticsService {
-    public void getAllAnimals();
-    public void getAnimalsBySpecies(Species species);
-    public void getAnimalsByHealthStatus(HealthStatus healthStatus);
-    public void getAnimalsByEnclosure(Enclosure enclosure);
-    public void getAllEnclosures();
-    public void getFreeEnclosures();
+    List<IAnimal> getAllAnimals();
+    List<IEnclosure> getAllEnclosures();
+    List<IFeedingSchedule> getAllFeedingSchedules();
+    String getFeedingScheduleStats();
+    String getAnimalStats();
+    String getEnclosureStats();
 }
