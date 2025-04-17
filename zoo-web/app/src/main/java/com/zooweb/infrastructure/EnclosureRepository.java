@@ -26,7 +26,7 @@ public class EnclosureRepository implements IEnclosureRepository {
     @Override
     public void removeEnclosure(UUID enclosureId) {
         if (enclosures.get(enclosureId) == null) {
-            throw new RuntimeException("Enclosure not found");
+            throw new RuntimeException("Вольер не найден");
         }
         enclosures.remove(enclosureId);
     }
@@ -34,7 +34,7 @@ public class EnclosureRepository implements IEnclosureRepository {
     @Override
     public IEnclosure getEnclosure(UUID enclosureId) {
         if (enclosures.get(enclosureId) == null) {
-            throw new RuntimeException("Enclosure not found");
+            throw new RuntimeException("Вольер не найден");
         }
         return enclosures.get(enclosureId);
     }
@@ -47,7 +47,7 @@ public class EnclosureRepository implements IEnclosureRepository {
     @Override
     public int getVacantCapacity(UUID enclosureId) {
         if (enclosures.get(enclosureId) == null) {
-            throw new RuntimeException("Enclosure not found");
+            throw new RuntimeException("Вольер не найден");
         }
         return enclosures.get(enclosureId).getVacant();
     }

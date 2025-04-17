@@ -72,7 +72,7 @@ public class FeedingOrganizationService implements IFeedingOrganizationService{
     public IFeedingSchedule createFeedingSchedule(UUID animalId, DayOfWeek weekday, LocalTime time, Food food) {
         IAnimal animal = animalRepository.getAnimal(animalId);
         if (animal == null) {
-            throw new RuntimeException("Animal not found");
+            throw new RuntimeException("Животное не найдено");
         }
         FeedingTime feedingTime = new FeedingTime(weekday, time);
         return feedingScheduleRepository.addFeedingSchedule(animalId, food, feedingTime);

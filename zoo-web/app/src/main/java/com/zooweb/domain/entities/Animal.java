@@ -65,7 +65,7 @@ public class Animal implements IAnimal {
         if (healthStatus == HealthStatus.ILL) {
             healthStatus = HealthStatus.HEALTHY;
         } else {
-            throw new IllegalStateException("Animal is already healthy");
+            throw new IllegalStateException("Животное уже здорово");
         }
     }
 

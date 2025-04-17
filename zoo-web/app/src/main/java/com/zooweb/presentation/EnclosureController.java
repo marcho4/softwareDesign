@@ -25,9 +25,11 @@ import com.zooweb.domain.IAnimal;
 import com.zooweb.domain.IEnclosure;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/api/enclosures")
+@Tag(name = "Вольеры", description = "Управление вольерами")
 @Validated
 public class EnclosureController {
     

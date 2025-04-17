@@ -43,7 +43,7 @@ public class EnclosureService implements IEnclosureService {
     @Override
     public void deleteEnclosure(UUID id) {
         if (enclosureRepo.getEnclosure(id) == null) {
-            throw new RuntimeException("Enclosure not found");
+            throw new RuntimeException("Вольер не найден");
         }
         enclosureRepo.removeEnclosure(id);
     }
@@ -58,17 +58,17 @@ public class EnclosureService implements IEnclosureService {
         IEnclosure enclosure = this.getEnclosure(id);
 
         if (enclosure == null) {
-            throw new RuntimeException("Enclosure not found");
+            throw new RuntimeException("Вольер не найден");
         }
 
         IAnimal animal = animalRepo.getAnimal(animalId);
 
         if (animal == null) {
-            throw new RuntimeException("Animal not found");
+            throw new RuntimeException("Животное не найдено");
         }
 
         if (animal.getSpecies() != enclosure.getSpecies()) {
-            throw new RuntimeException("Animal species does not match enclosure species");
+            throw new RuntimeException("Виды животного и клетки не совпадают");
         }
 
         if (enclosure.getSpecies() != animal.getSpecies()) {
@@ -76,7 +76,7 @@ public class EnclosureService implements IEnclosureService {
         }
 
         if (animal.getEnclosure() != null) {
-            throw new RuntimeException("Animal already in an enclosure");
+            throw new RuntimeException("Животное уже в клетке");
         }
 
         enclosure.addAnimal(animal);
@@ -87,14 +87,14 @@ public class EnclosureService implements IEnclosureService {
     public void removeAnimalFromEnclosure(UUID id, UUID animalId) {
         IEnclosure enclosure = enclosureRepo.getEnclosure(id);
         if (enclosure == null) {
-            throw new RuntimeException("Enclosure not found");
+            throw new RuntimeException("Вольер не найден");
         }
 
 
         IAnimal animal = animalRepo.getAnimal(animalId);
 
         if (animal == null) {
-            throw new RuntimeException("Animal not found");
+            throw new RuntimeException("Животное не найдено");
         }
 
         enclosure.removeAnimal(animal);

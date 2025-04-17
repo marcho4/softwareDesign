@@ -26,9 +26,11 @@ import com.zooweb.presentation.dto.FeedAnimalRequestDTO;
 import com.zooweb.presentation.dto.MessageResponseDTO;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/api/animals")
+@Tag(name = "Животные", description = "Управление животными")
 @Validated
 public class AnimalController {
 

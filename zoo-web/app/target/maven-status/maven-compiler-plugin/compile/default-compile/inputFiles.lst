@@ -14,12 +14,14 @@
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/presentation/dto/EnclosureDTO.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/application/AnimalService.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/presentation/dto/FeedAnimalRequestDTO.java
+/Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/presentation/dto/EnclosureStatsDTO.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/infrastructure/EnclosureRepository.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/domain/IFeedingSchedule.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/presentation/dto/AnimalIdDTO.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/OpenApiConfig.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/application/FeedingScheduleNotifier.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/application/ZooStatisticsService.java
+/Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/presentation/dto/FeedingScheduleStatsDTO.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/presentation/dto/CreateFeedingScheduleDTO.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/presentation/StatsController.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/presentation/EnclosureController.java
@@ -48,6 +50,7 @@
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/application/eventlisteners/FeedingTimeEventListener.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/domain/entities/Animal.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/domain/value_objects/FeedingTime.java
+/Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/presentation/dto/AnimalStatsDTO.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/infrastructure/FeedingScheduleRepository.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/presentation/dto/UpdateFeedingScheduleDTO.java
 /Users/marcho/KPO/zoo-web/app/src/main/java/com/zooweb/presentation/dto/AnimalDTO.java

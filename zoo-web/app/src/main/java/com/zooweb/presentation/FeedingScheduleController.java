@@ -10,14 +10,18 @@ import com.zooweb.presentation.dto.UpdateFeedingScheduleDTO;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import java.util.List;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/feeding-schedule")
+@Validated
+@Tag(name = "Расписание кормления", description = "Управление расписанием кормления животных")
 public class FeedingScheduleController {
 
     private final IFeedingOrganizationService feedingOrganizerService;

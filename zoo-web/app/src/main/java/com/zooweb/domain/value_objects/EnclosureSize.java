@@ -11,13 +11,13 @@ public class EnclosureSize {
 
     public EnclosureSize(int width, int height, int length) {
         if (width <= 0) {
-            throw new IllegalArgumentException("Width must be greater than 0");
+            throw new IllegalArgumentException("Ширина должна быть больше 0");
         }
         if (height <= 0) {
-            throw new IllegalArgumentException("Height must be greater than 0");
+            throw new IllegalArgumentException("Высота должна быть больше 0");
         }
         if (length <= 0) {
-            throw new IllegalArgumentException("Length must be greater than 0");
+            throw new IllegalArgumentException("Длина должна быть больше 0");
         }
         this.width = width;
         this.height = height;
@@ -26,10 +26,10 @@ public class EnclosureSize {
 
     @Override
     public String toString() {
-        return "EnclosureSize{" +
-                "width=" + width +
-                ", height=" + height +
-                ", length=" + length +
+        return "Размер клетки: " +
+                "Ширина=" + width +
+                ", Высота=" + height +
+                ", Длина=" + length +
                 '}';
     }
 }
