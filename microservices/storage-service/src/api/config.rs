@@ -1,6 +1,7 @@
 use actix_web::web;
 use actix_web::web::ServiceConfig;
 use crate::api::get_file_content::get_file_content;
+use crate::api::get_plagiarism::get_plagiarism;
 use crate::api::upload::upload;
 
 pub fn config(cfg: &mut ServiceConfig) {
@@ -8,5 +9,6 @@ pub fn config(cfg: &mut ServiceConfig) {
         web::scope("/files")
             .service(upload)
             .service(get_file_content)
+            .service(get_plagiarism)
     );
 }

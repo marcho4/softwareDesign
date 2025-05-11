@@ -1,18 +1,16 @@
 [package]
-name = "storage-service"
+name = "file-analysis"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+reqwest = { version = "0.12.15", features = ["default", "json", "multipart", "stream"] }
+serde_json = "1.0.140"
 actix-web = "4.10.2"
 utoipa = "5.3.1"
 utoipa-swagger-ui = { version = "9.0.0", features = ["actix-web"] }
 sqlx = { version = "0.8.5", features = ["postgres", "migrate", "runtime-tokio"] }
-actix-multipart = "0.7.2"
-sha2 = "0.10.9"
-serde_json = "1.0.140"
 dotenv = "0.15.0"
 env_logger = "0.11.8"
 serde = { version = "1.0.219", features = ["derive"] }
-reqwest = { version = "0.12.15", features = ["default", "json", "multipart", "stream"] }
 tokio = { version = "1.45.0", features = ["full"] }

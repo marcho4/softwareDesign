@@ -1,0 +1,4 @@
+.env
+/storage-service/target
+/file-analysis/target
+/api_gateway/target

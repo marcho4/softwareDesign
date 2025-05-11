@@ -1,12 +1,15 @@
 use std::sync::Arc;
 use sqlx::{Error, Pool, Postgres, Row};
-use crate::models::FileMetadata::FileMetadata;
+use crate::models::file_metadata::FileMetadata;
 
 pub struct Repo {
-    pub pool: Arc<Pool<Postgres>>
+    pool: Arc<Pool<Postgres>>
 }
 
 impl Repo {
+    pub fn new(pool: Arc<Pool<Postgres>>) -> Self {
+        Self { pool }
+    }
     pub async fn check_if_hash_exists(&self, hash: String) -> Result<i32, Error> {
         let row = sqlx::query("SELECT * FROM files WHERE hash = $1 ")
             .bind(hash)
@@ -41,5 +44,14 @@ impl Repo {
             name: row.get("name"),
             location: row.get("location")
         })
+    }
+    
+    pub async fn get_hash_count(&self, hash: String) -> Result<bool, Error> {
+        let rows = sqlx::query("SELECT * FROM files WHERE hash = $1")
+            .bind(hash)
+            .fetch_all(self.pool.as_ref())
+            .await?;
+        
+        Ok(rows.len() > 1)
     }
 }

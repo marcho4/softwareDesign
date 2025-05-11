@@ -1,7 +1,16 @@
-use actix_web::{HttpResponse, post, web};
-use actix_multipart::form::{tempfile::TempFile, MultipartForm};
-use crate::api::dto::{ErrorResponse, SuccessResponse, UploadFormSchema};
-use crate::services::storage_service::StorageService;
+use actix_multipart::form::MultipartForm;
+use actix_multipart::form::tempfile::TempFile;
+use actix_web::{post, web, HttpResponse, Responder};
+use crate::models::error_response::ErrorResponse;
+use crate::models::success_response::SuccessResponse;
+use crate::services::gateway::Gateway;
+use utoipa::ToSchema;
+
+#[derive(ToSchema)]
+pub struct UploadFormSchema {
+    #[schema(format = Binary)]
+    pub file: String,
+}
 
 #[derive(Debug, MultipartForm)]
 struct UploadForm {
@@ -22,16 +31,14 @@ struct UploadForm {
     )
 )]
 #[post("/upload")]
-pub async fn upload(
+pub async fn upload_file(
     MultipartForm(form): MultipartForm<UploadForm>,
-    repo: web::Data<StorageService>
-) -> HttpResponse {
-    let temp_path = form.file.file.path();
-    let filename = form.file.file_name.unwrap();
-    let service = repo.into_inner();
-    
-    match service.upload(temp_path, filename).await {
-        Ok(res) => HttpResponse::Ok().json(SuccessResponse{
+    gateway: web::Data<Gateway>
+) -> impl Responder {
+    let path = form.file.file.path();
+
+    match gateway.upload_file(path).await {
+        Ok(res) => HttpResponse::Ok().json(SuccessResponse {
             id: res,
         }),
         Err(err) => HttpResponse::InternalServerError().json(ErrorResponse {

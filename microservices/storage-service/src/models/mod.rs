@@ -1,1 +1,2 @@
-pub mod FileMetadata;
+pub mod file_metadata;
+pub mod plagiarism;

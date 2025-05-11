@@ -1,5 +1,9 @@
 use utoipa::OpenApi;
-use crate::api::{ get_file_content::__path_get_file_content, upload::__path_upload};
+use crate::api::{ 
+    get_file_content::__path_get_file_content,
+    upload::__path_upload, 
+    get_plagiarism::__path_get_plagiarism
+};
 
 #[derive(OpenApi)]
 #[openapi(
@@ -10,7 +14,8 @@ use crate::api::{ get_file_content::__path_get_file_content, upload::__path_uplo
     ),
     paths(
         get_file_content,
-        upload
+        upload,
+        get_plagiarism
     )
 )]
 pub struct OpenApiDocs;
