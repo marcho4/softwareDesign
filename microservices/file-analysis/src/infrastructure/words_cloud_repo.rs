@@ -1,12 +1,12 @@
 use serde_json::json;
 
-pub struct WordsService {
+pub struct WordsRepo {
     client: reqwest::Client,
 }
 
 const URL: &str = "https://quickchart.io/wordcloud";
 
-impl WordsService {
+impl WordsRepo {
     pub fn new() -> Self {
         Self {
             client: reqwest::Client::new(),

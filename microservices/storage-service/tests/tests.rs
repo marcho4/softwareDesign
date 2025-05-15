@@ -43,7 +43,7 @@ mod tests {
         let response_2 = response_2.json::<SuccessResponse>().await.unwrap();
         let id_2 = response_2.id;
 
-        assert_eq!(id, id_2);
+        assert!(id != id_2);
         
         let response = client
             .get(&format!("http://localhost:8000/files/content/{}", id))

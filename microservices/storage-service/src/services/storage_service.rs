@@ -1,4 +1,5 @@
 use std::path::Path;
+use chrono::Utc;
 use sqlx::Error;
 use crate::repositories::repo::Repo;
 use crate::services::file_service::FileService;
@@ -21,16 +22,18 @@ impl StorageService {
     ) -> Result<i32, Box<dyn std::error::Error>> {
         let hash = FileService::get_file_hash(temp_path)?;
         
-        if let Ok(id) = self.repo.check_if_hash_exists(hash.clone()).await {
-            return Ok(id);
-        };
+        // if let Ok(id) = self.repo.check_if_hash_exists(hash.clone()).await {
+        //     return Ok(id);
+        // };
+        let timestamp = Utc::now().format("%Y%m%d_%H%M%S").to_string();
+        let new_filename = format!("{}_{}", timestamp, filename);
         
-        FileService::save_file(temp_path, filename.clone())?;
+        FileService::save_file(temp_path, new_filename.clone())?;
         
         let file_id = self.repo.upload_info_about_file(
             hash,
             filename.clone(),
-            "content/".to_owned() + filename.as_str()
+            "content/".to_owned() + new_filename.as_str()
         ).await?;
         
         Ok(file_id)

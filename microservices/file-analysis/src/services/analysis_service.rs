@@ -1,20 +1,18 @@
 use crate::infrastructure::repo::Repo;
 use crate::infrastructure::storage_repo::StorageRepo;
+use crate::infrastructure::words_cloud_repo::WordsRepo;
 use crate::models::analysis_metadata::AnalysisMetadata;
 use crate::models::analysis_result::AnalysisResult;
-use super::{
-    file_service::FileService, 
-    words_service::WordsService
-};
+use super::file_service::FileService;
 
 pub struct AnalysisService {
-    words_service: WordsService,
+    words_service: WordsRepo,
     storage_repo: StorageRepo,
     repo: Repo
 }
 
 impl AnalysisService {
-    pub fn new(words_service: WordsService, storage_repo: StorageRepo, repo: Repo) -> Self {
+    pub fn new(words_service: WordsRepo, storage_repo: StorageRepo, repo: Repo) -> Self {
         Self {
             words_service,
             storage_repo,

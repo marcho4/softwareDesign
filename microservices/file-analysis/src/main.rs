@@ -13,9 +13,9 @@ use utoipa_swagger_ui::SwaggerUi;
 use crate::api::config::config;
 use crate::api::openapi::OpenApiDocs;
 use crate::infrastructure::repo::Repo;
+use crate::infrastructure::words_cloud_repo::WordsRepo;
 use crate::infrastructure::storage_repo::StorageRepo;
 use crate::services::analysis_service::AnalysisService;
-use crate::services::words_service::WordsService;
 
 
 static MIGRATOR: Migrator = sqlx::migrate!("src/migrations");
@@ -45,7 +45,7 @@ async fn main() -> std::io::Result<()> {
     MIGRATOR.run(&*pool).await.unwrap();
     println!("Database migrations completed");
     
-    let word_service = WordsService::new();
+    let word_service = WordsRepo::new();
     let storage_repo = StorageRepo::new(storage_service_url);
     let repo = Repo::new(pool);
     
